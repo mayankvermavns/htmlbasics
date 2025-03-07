@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Rowspan and Colspan Example</title>
+  </head>
+  <body>
+    <table border="1">
+      <!-- Table caption -->
+      <caption>Fruits and Colors</caption>
+
+      <!-- Table header row with column headers -->
+      <tr>
+        <th>Fruits</th>
+        <th colspan="2">Colors</th>
+      </tr>
+
+      <!-- Table body rows with fruit names and color names -->
+      <tr>
+        <!-- First row with merged cell for 'Apple' spanning two rows and two separate cells for 'Red' and 'Green' -->
+        <td rowspan="2">Apple</td>
+        <td>Red</td>
+        <td>Green</td>
+      </tr>
+      <tr>
+        <!-- Second row with merged cell for 'Yellow' spanning two columns -->
+        <td colspan="2">Yellow</td>
+      </tr>
+
+      <tr>
+        <!-- Third row with 'Grapes' and two separate cells for 'Purple' and 'Green' -->
+        <td>Grapes</td>
+        <td>Purple</td>
+        <td>Green</td>
+      </tr>
+    </table>
+  </body>
+</html>
+
