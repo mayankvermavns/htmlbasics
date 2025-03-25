@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image example</title>
+    <style>
+        .elephant {
+            display: block;
+        }
+
+        .lion {
+            display: none;
+        }
+
+        .deer {
+            display: none;
+        }
+
+        body {
+            /*  */
+        }
+
+        @media screen and (max-width: 800px) {
+            body { 
+                /*  */
+            }
+
+            .elephant {
+            display: none;
+        }
+
+        .lion {
+            display: block;
+        }
+
+        .deer {
+            display: none;
+        }
+        }
+
+        @media screen and (max-width:600px) {
+            body {
+                
+            }
+            .elephant {
+            display: none;
+        }
+
+        .lion {
+            display: none;
+        }
+
+        .deer {
+            display: block;
+        }
+        } 
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="lion" src="lion image.webp" alt="lion">
+        <img class="elephant" src="elephant image.jpg" alt="elephant">
+        <img class="deer" src="deer image.jpg" alt="deer">
+    </div>
+</body>
+
+</html>
