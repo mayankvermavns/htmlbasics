@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attribute Selectors Example</title>
+    <style>
+      /* This is a CSS comment */
+
+      /* Example 1: exists selector */
+      /* This selector targets all elements that have a "data-category" attribute */
+      [data-category] {
+        color: blue;
+      }
+
+      /* Example 2: value selector */
+      /* This selector targets all "a" elements with a "href" attribute whose value starts with "https" */
+      a[href^="https"] {
+        color: green;
+      }
+
+      /* Example 3: substring value selector */
+      /* This selector targets all "img" elements with an "alt" attribute that contains the word "logo" */
+      img[alt*="logo"] {
+        border: 1px solid black;
+      }
+
+      /* Example 4: ends with value selector */
+      /* This selector targets all "a" elements with a "href" attribute whose value ends with ".pdf" */
+      a[href$=".pdf"] {
+        font-weight: bold;
+      }
+
+      /* Example 5: value with hyphen selector */
+      /* This selector targets all "a" elements with a "hreflang" attribute whose value starts with "en" and is followed by a hyphen */
+      a[hreflang|="en"] {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Attribute Selector Examples</h1>
+
+    <!-- Example 1: exists selector -->
+    <div data-category="sports">
+      This is an element with a "data-category" attribute.
+    </div>
+
+    <!-- Example 2: value selector -->
+    <a href="https://www.google.com">This is a link to Google</a>
+
+    <!-- Example 3: substring value selector -->
+    <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6icTm2Sbcw_EbkZXXWk1buqlGaefJi_A3WGPDXpZCV-cdTvYfFGrPDcQsflxCVzZPW9OB3CnoTLkWzCgccqL7FTDPJ945BODXaGxG46ZENuUZYS9dPv8JOsf24arzOEDhCnEBjXfHorQ/s1600/Varanasi+Software+Junction+Phone+Logo.png"
+      alt="Varanasi Software Junction Phone Logo"
+    />
+
+    <!-- Example 4: ends with value selector -->
+    <a href="document.pdf">Download PDF</a>
+
+    <!-- Example 5: value with hyphen selector -->
+    <a hreflang="en-us">English (US)</a>
+  </body>
+</html>
