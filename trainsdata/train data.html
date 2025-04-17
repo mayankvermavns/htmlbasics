@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SWAPI FETCH TRAIN DATA EXAMPLE</title>
+</head>
+<body>
+        <h1>SWAPI FETCH TRAIN DATA</h1>
+        <div>
+            <label for="trainId">Enter Train Id : </label>
+            <input type="text" placeholder="Enter Train No." id="trainId">
+            <button onclick="fetchTrain()"> Fetch Train No.</button>
+        </div>
+        <div id="output"></div>
+        <div id="trainno"></div>
+        <script>
+            function fetchTrain(){
+                personno=document.getElementById("trainId").value;
+                const url=`https://mayankvermavns.github.io/htmlbasics/trains.json/`;
+                fetch (url)
+                .then(response=>{
+                    if (!response.ok){
+                        throw new Error(`Error:${response.status}-
+                        ${response.statusText}`)
+                    }
+                        return response.json();
+                    .then(Data=>{
+                        console.log("found",Data.trainno)
+                        document.getElementById("trainno").innerText=Data.trainno;
+                    })
+                })
+            }
+        </script>
+</body>
+</html>
