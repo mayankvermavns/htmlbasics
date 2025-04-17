@@ -9,10 +9,10 @@
     ]
     },
     {
-    "trainno.": 1229,
-    "startstations": "Varanasi",
-    "destinations": "Delhi",
-    "stations.": [
+    "trainno": 1229,
+    "startstation": "Varanasi",
+    "destination": "Delhi",
+    "stations": [
     "Kanpur",
     "Lucknow"
     ]
