@@ -1,0 +1,9 @@
+{
+    "trainno": 1227,
+    "startstation": "Varanasi",
+    "destination": "Delhi",
+    "stations": [
+    "Varanasi",
+    "Lucknow"
+    ]
+    }
