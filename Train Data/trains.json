@@ -1,9 +1,20 @@
-{
-    "trainno": 1227,
+[
+    {
+    "trainno": 1228,
     "startstation": "Varanasi",
     "destination": "Delhi",
     "stations": [
-    "Varanasi",
+    "Kanpur",
+    "Lucknow"
+    ]
+    },
+    {
+    "trainno.": 1229,
+    "startstations": "Varanasi",
+    "destinations": "Delhi",
+    "stations.": [
+    "Kanpur",
     "Lucknow"
     ]
     }
+    ]
