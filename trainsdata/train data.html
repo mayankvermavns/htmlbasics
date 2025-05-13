@@ -1,48 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FETCH TRAIN DATA EXAMPLE</title>
 </head>
-<body>
-        <h1>FETCH TRAIN DATA</h1>
-        <div>
-            <!-- <label for="trainId">Enter Train Id : </label> -->
-            <!-- <input type="text" placeholder="Enter Train No." id="trainId"> -->
-            <button onclick="fetchTrain()"> Fetch Train No.</button>
-        </div>
-        <div id="output"></div>
-        <div id="trainno"></div>
-        <div id="startstation"></div>
-        <script>
-            function fetchTrain(){
-                // personno=document.getElementById("trainId").value;
-                const url=`https://mayankvermavns.github.io/htmlbasics/trainsdata/trains.json`;
-                alert(url);
-                fetch (url)
 
-                .then(response=>{
-                    if (!response.ok){
-                        alert("1");
+<body>
+    <h1>FETCH TRAIN DATA</h1>
+    <div>
+        <!-- <label for="trainId">Enter Train Id : </label> -->
+        <!-- <input type="text" placeholder="Enter Train No." id="trainId"> -->
+        <button onclick="fetchTrain()"> Fetch Train No.</button>
+    </div>
+    <div id="output"></div>
+    <div id="trainno"></div>
+    <div id="startstation"></div>
+    <div id="destination"></div>
+    <div id="stations"></div>
+    <script>
+        let trainsData = [
+            { trainno: "1228", startstation:"Varanasi", destination:"Delhi", stations:"Lucknow,Kanpur"},
+        ];
+        let names = trainsData.map(person => `${person.trainno},${person.startstation},${person.destination},${person.stations}`);
+        console.log(names); // Logs: ["A", "B", "C"]
+
+        function fetchTrain() {
+            // personno=document.getElementById("trainId").value;
+            const url = `https://mayankvermavns.github.io/htmlbasics/trainsdata/trains.json`;
+            // alert(url);
+            fetch(url)
+
+                .then(response => {
+                    if (!response.ok) {
+                        // alert("1");
                         throw new Error(`Error:${response.status}-
                         ${response.statusText}`)
                     }
                     // let x=response.json();
                     // console.log(x);
-                        return response.json();
+                    return response.json();
                 })
-                        .then(data => {
-                    console.log("found", data.trainno);
+                .then(data => {
+                    console.log("found", data.length);
                     document.getElementById("trainno").innerText = data[0].trainno;
                     console.log("found", data.startstation);
-                    document.getElementById("startstation").innerText = data.startstation;
-                    
+                    document.getElementById("startstation").innerText = data[0].startstation;
+                    console.log("found", data.destination);
+                    document.getElementById("destination").innerText = data[0].destination;
+                    console.log("found", data.stations);
+                    document.getElementById("stations").innerText = data[0].stations;
+
                 })
                 .catch(error => {
                     console.log(error.message);
                 });
-            }
-        </script>
+        }
+    </script>
 </body>
+
 </html>
